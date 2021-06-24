@@ -1,4 +1,4 @@
-package com.lightningboys.uhchinseo.domain;
+package com.lightningboys.uhchinseo.Domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,3 +26,4 @@ public class AZGame {
     private Character category;
 
 }
+
