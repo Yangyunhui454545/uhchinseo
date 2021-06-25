@@ -20,7 +20,7 @@ public class AZGame {
     private String selection;
 
     @Column(name = "az_answer")
-    private boolean answer;
+    private String answer;
 
     @Column(name = "az_category")
     private Character category;

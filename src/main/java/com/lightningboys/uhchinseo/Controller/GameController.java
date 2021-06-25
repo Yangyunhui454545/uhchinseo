@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequiredArgsConstructor
 public class GameController {
@@ -18,9 +20,8 @@ public class GameController {
 
     @ResponseBody
     @GetMapping("/azGame")
-    public String azGame(@RequestParam("pageNum")int pageNum, Model model){
+    public Page<AZGame> azGame(HttpServletRequest request, @RequestParam("pageNum")int pageNum, Model model){
        Page<AZGame> azGame = azGameService.findAll(pageNum);
-       model.addAttribute("azGame", azGame);
-       return "game/azGame";
+       return azGame;
     }
 }
