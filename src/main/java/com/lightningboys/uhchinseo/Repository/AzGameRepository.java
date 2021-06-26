@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface AzGameRepository extends JpaRepository<AZGame, Long> {
 
     Page<AZGame> findAll(Pageable pageable);
+
 }

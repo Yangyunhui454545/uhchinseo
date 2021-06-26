@@ -18,6 +18,6 @@ public class AzGameService {
     private final AzGameRepository azGameRepository;
 
     public Page<AZGame> findAll(int pageNum){
-        return azGameRepository.findAll(PageRequest.of(pageNum-1, 1));
+        return azGameRepository.findAll(PageRequest.of(pageNum-1, 3));
     }
 }
