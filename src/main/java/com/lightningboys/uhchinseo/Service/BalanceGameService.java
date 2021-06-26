@@ -21,7 +21,9 @@ public class BalanceGameService {
     public Page<BalanceGame> findAll(int pageNum){
         return balanceGameRepository.findAll(PageRequest.of(pageNum-1, 2));
     }
-    public void updateCnt(int balanceCategory, String question, int balanceCount){
-        balanceGameRepository.updateCnt(balanceCategory, question, balanceCount);
+    @Transactional
+    public void updateCnt(Long id, int balanceCount) {
+        balanceGameRepository.updateCnt(id, balanceCount + 1);
+
     }
 }
