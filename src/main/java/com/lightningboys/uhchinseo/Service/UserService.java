@@ -18,4 +18,11 @@ public class UserService {
         Optional<User> user= userRepository.findById(id);
         return user;
     }
+
+
+    @Transactional
+    public void updateScore(Long id, int totalScore){
+        userRepository.updateScore(id,totalScore);
+    }
+
 }
