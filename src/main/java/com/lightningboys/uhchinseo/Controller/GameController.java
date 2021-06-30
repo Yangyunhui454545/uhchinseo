@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -21,16 +23,24 @@ public class GameController {
 
     @ResponseBody
     @GetMapping("/azGame")
-    public Page<AZGame> azGame(@RequestParam("pageNum")int pageNum){
+    public List<AZGame> azGame(@RequestParam("pageNum")int pageNum){
        Page<AZGame> azGame = azGameService.findAll(pageNum);
-       return azGame;
+       List<AZGame> azGameList = new ArrayList<>();
+       for(AZGame game : azGame){
+           azGameList.add(game);
+       }
+       return azGameList;
     }
 
     @ResponseBody
     @GetMapping("/balanceGame")
-    public Page<BalanceGame> BalanceGame(@RequestParam("pageNum")int pageNum){
+    public List<BalanceGame> BalanceGame(@RequestParam("pageNum")int pageNum){
         Page<BalanceGame> BalanceGame = balanceGameService.findAll(pageNum);
-        return BalanceGame;
+        List<BalanceGame> balanceGameList = new ArrayList<>();
+        for(BalanceGame balanceGame : BalanceGame){
+            balanceGameList.add(balanceGame);
+        }
+        return balanceGameList;
     }
 
     @ResponseBody
