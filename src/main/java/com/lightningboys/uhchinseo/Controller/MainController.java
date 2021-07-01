@@ -19,8 +19,10 @@ public class MainController {
     private final UserService userService;
 
     @GetMapping("/")
-    public String main(){
-
+    public String main(Model model){
+        Optional<User> user = userService.findByNickName("피넛버터젤리빈");
+        model.addAttribute("nickName",user.get().getNickname());
+        model.addAttribute("user", user.get());
         return "index";
     }
 
