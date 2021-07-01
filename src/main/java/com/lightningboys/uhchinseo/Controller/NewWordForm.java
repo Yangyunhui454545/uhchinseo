@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter @Setter
 public class NewWordForm {
     private Long id;
-    private int score;
+    private int totalScore;
 }

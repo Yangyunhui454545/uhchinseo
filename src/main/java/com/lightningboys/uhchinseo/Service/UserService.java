@@ -23,6 +23,14 @@ public class UserService {
         return user;
     }
 
+
+
+    @Transactional
+    public void updateScore(Long id, int totalScore){
+        userRepository.updateScore(id,totalScore);
+    }
+
+
     public Optional<User> findByNickName(String nickName){
         try{
             Optional<User> user = userRepository.findByNickname(nickName);
@@ -37,4 +45,5 @@ public class UserService {
    public void save(User user){
         userRepo.save(user);
    }
+
 }
