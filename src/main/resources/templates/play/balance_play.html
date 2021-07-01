@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="어색한 친구를 소개합니다." />
+        <meta name="author" content="번개탄소년단" />
+        <title>어친소</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../../static/assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../../static/css/styles.css" rel="stylesheet" />
+        <!-- 차트 링크 --> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" 
+        integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js" 
+        integrity="sha512-CAv0l04Voko2LIdaPmkvGjH3jLsH+pmTXKFoyh5TIimAME93KjejeP9j7wSeSRXqXForv73KUZGJMn8/P98Ifg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body id="page-top">
+        <!-- Modal 모달 창  -->
+        <div class="modal__background">
+            <div class="modal__box modal_box modal">
+                <div class="modal_content modal_texts modal">
+                    <h4 class="modal_text">!닉네임을 입력하세요!</h3>
+                    <input type="text" id="user_name" onfocus="this.value=''" value="닉네임을 입력하세요" class="modal_text modal_input"/>          
+                    <br>
+                    <button class="modal_btn" id="confirm_button">확인</button>
+                    <button class="modal_btn" id="close_button" onclick="CloseModal();">닫기</button>
+                </div>
+            </div>
+
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        Menu
+                        <i class="fas fa-bars ms-1"></i>
+                    </button>
+                    <div id="navbarResponsive">
+                        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 text-shadow">
+                            <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">GAMES</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html#team">ABOUT</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 닉네임 표시 위치-->
+                    <!-- css와 js로 닉네임이 없으면 -> 닉네임 설정 버튼만 활성화 / 닉네임 설정 후 -> 변경 버튼만 활성화  -->
+                    <div class="text-shadow">  
+                        <p id="nickname-area" class='no_p'>닉네임을 설정해주세요.</p>
+                            <button id="btn-create-name">닉네임 설정</button>
+                    </div>
+
+                </div>
+            </nav>
+            <!-- Masthead-->
+            <header class="masthead">
+                <div class="container">
+                    <div class="masthead-heading-1 text-uppercase">내 마음을 울리는 선택지를 골라라!!</div>
+                </div>
+            </header>
+
+            <!-- 게임 화면 -->
+            <section class="page-section bg-dark" style="padding-top:0rem;">
+                <div class="container">
+                    <div class="text-center">
+                    <div class="row" style="justify-content: center;">
+                        <div class="col-lg-5">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                  <div class="flip-card-front">
+                                    똥맛 카레
+                                  </div>
+                                  <div class="flip-card-back" style="padding:2rem;">
+                                    <canvas id="myChart2" width="400" height="400"></canvas>
+                                    <script>
+                                        var ctx = document.getElementById('myChart2');
+                                        var myChart = new Chart(ctx, {
+                                            type: 'doughnut',
+                                            data: {
+                                                datasets: [{
+                                                    data: [12, 19],
+                                                    backgroundColor: [
+                                                        '#ff6384',
+                                                        '#ffce56',
+                                                    ],
+                                                }]
+                                            },
+                                            options: {
+                                                events: []
+                                            }
+                                        });
+                                        </script>
+                                  </div>
+                                </div>
+                              </div> 
+                        </div>
+                        <div class="col-lg-1" style="padding-top:13rem; padding-bottom: 2.5rem; font-size: 3rem; color:red;">VS</div>
+                        <div class="col-lg-5">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                  <div class="flip-card-front">
+                                    카레맛 똥
+                                  </div>
+                                  <div class="flip-card-back" style="padding:2rem;">
+                                    <canvas id="myChart" width="400" height="400"></canvas>
+                                    <script>
+                                        var ctx = document.getElementById('myChart');
+                                        var myChart = new Chart(ctx, {
+                                            type: 'doughnut',
+                                            data: {
+                                                datasets: [{
+                                                    data: [12, 19],
+                                                    backgroundColor: [
+                                                        '#ff6384',
+                                                        '#ffce56',
+                                                    ],
+                                                }]
+                                            },
+                                            options: {
+                                                events: []
+                                            }
+                                        });
+                                        </script>
+                                  </div>
+                                </div>
+                              </div> 
+                        </div>
+
+
+
+                    </div>
+                    <div class="text-center">    
+                    <div class="row">
+                        <div class="next-text" style="padding-top:3rem; padding-bottom: 2.5rem;  display:none;" >▶ 결과 보기</div>
+                        <!-- 정답보기 버튼 클릭하면 정답보기 버튼 없어지고 다음으로 넘어가는 버튼 보이게 하기 -->
+                        <div class="next-text" style="padding-top:3rem; padding-bottom: 2.5rem; display: none;">▶ next</div> 
+                        <!-- 지금 문제가 마지막 문제인 경우 정답보기 버튼 클릭하면 정답보기 버튼 없어지고 처음부터 다시하거나 홈으로 가는 버튼 두개 동시에 보이게  -->
+                        <!-- 밸런스 게임은 결과화면이 따로 없음~~ !!-->
+                        <div class="next-text text-center col-lg-6" style="padding-top:3rem; padding-bottom: 2.5rem; ">▶ restart</div>
+                        <div class="next-text text-center col-lg-6" style="padding-top:3rem; padding-bottom: 2.5rem; ">▶ home</div>
+                    </div></div> 
+                </div>
+                </div>
+            </section>
+
+            <!-- Footer-->
+            <footer class="footer py-2 fixed-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 text-shadow" style="color: #FFF; font-size: 1.24rem;">Copyright &copy; TINGTINGTAENGTAENG</div>
+                    </div>
+                </div>
+            </footer>
+            
+            
+        </div>
+    </body>
+</html>
