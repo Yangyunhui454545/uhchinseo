@@ -12,10 +12,10 @@ com/lightningboys/uhchinseo/Controller/GameController.java
  com.lightningboys.uhchinseo.Controller.GameController
 com/lightningboys/uhchinseo/Domain/User.java
  com.lightningboys.uhchinseo.Domain.User
-com/lightningboys/uhchinseo/Service/UserService.java
- com.lightningboys.uhchinseo.Service.UserService
 com/lightningboys/uhchinseo/Controller/BalanceForm.java
  com.lightningboys.uhchinseo.Controller.BalanceForm
+com/lightningboys/uhchinseo/Service/UserService.java
+ com.lightningboys.uhchinseo.Service.UserService
 com/lightningboys/uhchinseo/Repository/AzGameRepository.java
  com.lightningboys.uhchinseo.Repository.AzGameRepository
 com/lightningboys/uhchinseo/Service/NewWordGameService.java

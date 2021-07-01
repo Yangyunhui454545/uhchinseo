@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="어색한 친구를 소개합니다." />
@@ -16,15 +16,16 @@
 <div class="modal__background">
     <div class="modal__box modal_box modal">
         <div class="modal_content modal_texts modal">
-            <h4 class="modal_text">!닉네임을 입력하세요!</h3>
-                <input type="text" id="user_name" onfocus="this.value=''" value="닉네임을 입력하세요" class="modal_text modal_input"/>
-                <br>
-                <button class="modal_btn" id="confirm_button">확인</button>
-                <button class="modal_btn" id="close_button" onclick="CloseModal();">닫기</button>
+            <h4 class="modal_text">!닉네임을 입력하세요!</h4>
+            <input type="text" id="user_name" onfocus="this.value=''" value="닉네임을 입력하세요" class="modal_text modal_input"/>
+            <br>
+            <button class="modal_btn" id="confirm_button">확인</button>
+            <button class="modal_btn" id="close_button" onclick="CloseModal();">닫기</button>
         </div>
     </div>
 
     <!-- Navigation-->
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +52,7 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To</div>
+            <div class="masthead-subheading">Welcome To   <h1 th:text="${nickName}" class="title"></h1>   <h1 th:text="${user.getId()}" class="title"></h1>  </div>
             <div class="masthead-heading text-uppercase">TINGTINGTAENGTAENG</div>
         </div>
     </header>
@@ -231,4 +232,12 @@
 </div>
 
 </body>
+<script th:inline="javascript">
+<!--    타임리프로 가져온 변수를 js로 쓰려면 작성해야하는 코드     -->
+    // /*<![CDATA[*/
+
+    // /*]]>*/
+
+
+</script>
 </html>
